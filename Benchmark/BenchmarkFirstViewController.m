@@ -28,6 +28,11 @@
     NSString *filePath = [[NSBundle mainBundle] pathForResource:@"data" ofType:@"plist"];
     _albums = [NSArray arrayWithContentsOfFile:filePath];
     
+    // For refresh
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    refreshControl.attributedTitle = [[NSAttributedString alloc] initWithString:@"下拉刷新"];
+    [refreshControl addTarget:self action:@selector(refreshMyTable:) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
 }
 
 - (void)didReceiveMemoryWarning
@@ -41,7 +46,7 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    return @"专辑"; //To nudge the content down
+    return @"专辑";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -67,8 +72,9 @@
     cell.imageView.image = [UIImage imageNamed:[album objectForKey:@"cover"]];
     
     return cell;
-
 }
+
+// For Search
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
@@ -86,5 +92,16 @@
    
     return YES;
 }
+
+// For refresh
+- (void) refreshMyTable: (UIRefreshControl *)refreshControl {
+    // set a 2 seconds delay to mimic the refresh behavior
+    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 2);
+    dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+        [refreshControl endRefreshing];
+    });
+}
+
+
 
 @end
