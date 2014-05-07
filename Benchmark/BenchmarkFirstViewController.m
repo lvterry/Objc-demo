@@ -80,7 +80,6 @@
 {
     NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"name contains[c] %@", searchText];
     _searchResults = [_albums filteredArrayUsingPredicate:resultPredicate];
-    NSLog(@"%@", _searchResults);
 }
 
 -(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
