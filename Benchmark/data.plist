@@ -6,25 +6,25 @@
 		<key>cover</key>
 		<string>0.jpg</string>
 		<key>name</key>
-		<string>送你一朵山茶花</string>
+		<string>Appetite For Destruction</string>
 		<key>artist</key>
-		<string>好妹妹乐队</string>
+		<string>Guns N Roses</string>
 	</dict>
 	<dict>
 		<key>cover</key>
 		<string>1.jpg</string>
 		<key>name</key>
-		<string>天宫图</string>
+		<string>We are automatic</string>
 		<key>artist</key>
-		<string>窦唯、莫西子诗、子枫</string>
+		<string>New Pants</string>
 	</dict>
 	<dict>
 		<key>cover</key>
 		<string>2.jpg</string>
 		<key>name</key>
-		<string>播放你的世界</string>
+		<string>Android</string>
 		<key>artist</key>
-		<string>阿肆</string>
+		<string>Radiohead</string>
 	</dict>
 </array>
 </plist>
